@@ -181,7 +181,6 @@ int main()
     int textureWidth, textureHeight;
     unsigned char* image;
 
-    // Рассеивание
     image = SOIL_load_image("res/images/JPG1.jpg", &textureWidth, &textureHeight, 0, SOIL_LOAD_RGB);
     glBindTexture(GL_TEXTURE_2D, diffuseMap);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, textureWidth, textureHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
@@ -192,7 +191,6 @@ int main()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST_MIPMAP_NEAREST);
 
-    // отражение
     image = SOIL_load_image("res/images/JPG2.png", &textureWidth, &textureHeight, 0, SOIL_LOAD_RGB);
     glBindTexture(GL_TEXTURE_2D, specularMap);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, textureWidth, textureHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
